@@ -47,13 +47,17 @@ add_pkgs() {
     # PHP
     echo -e "\n$Cyan Installing PHP ... $Color_Off"
 
-    apt-get install -qq curl debconf-utils php-pear php8.2-curl php8.2-dev php8.2-gd php8.2-mbstring php8.2-zip php8.2-mysql php8.2-xml php8.2-fpm php8.2-intl php8.2-bcmath php-redis > /dev/null
+    apt-get install -qq curl debconf-utils php-pear php8.2-curl php8.2-dev php8.2-gd php8.2-mbstring php8.2-zip php8.2-mysql php8.2-xml php8.2-fpm php8.2-intl php8.2-bcmath > /dev/null
     apt-get purge -y '^php7.4.*' > /dev/null
     check $? "Installing PHP Failed!"
 
     echo -e "$IGreen OK $Color_Off"
 
-    #PHP Redis
+    # Redis
+    echo -e "\n$Cyan Installing Redis ... $Color_Off"
+    printf "\n" | snap install redis
+
+    # PHP Redis
     echo -e "\n$Cyan Installing PHP Redis ... $Color_Off"
     printf "\n" | pecl install redis
 }
