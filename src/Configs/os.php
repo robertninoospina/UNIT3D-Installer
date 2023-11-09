@@ -6,7 +6,7 @@ return [
      * Ubuntu
      */
     'ubuntu' => [
-        'pkg_manager' => 'apt',
+        'pkg_manager' => 'apt-get',
         'web-user' => 'www-data',
         'install_dir' => '/var/www/html',
         'nginx-sites-available_path' => '/etc/nginx/sites-available',
@@ -16,7 +16,6 @@ return [
             'nginx' => 'Web Server',
             'mysql-server' => 'Database Server',
             'supervisor' => 'A Process Control System',
-            'redis-server' => 'In-memory Data Structure Store',
             'nodejs' => 'JavaScript Run-time Environment (Includes npm)',
             'git' => 'Version Control',
             'tmux' => 'Screen Multiplexer',
