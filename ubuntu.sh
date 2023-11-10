@@ -68,6 +68,7 @@ add_pkgs() {
     echo -e "$IGreen OK $Color_Off"
 
     # Update Dependencies
+    echo -e "\n$Cyan Updating Dependencies ... $Color_Off"
     apt-get -qq upgrade
 
     echo -e "$IGreen OK $Color_Off"
