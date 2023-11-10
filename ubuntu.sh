@@ -54,18 +54,21 @@ add_pkgs() {
 
     # Redis
     echo -e "\n$Cyan Installing Redis ... $Color_Off"
-    wget https://download.redis.io/redis-stable.tar.gz
-    tar -xzvf redis-stable.tar.gz
-    cd redis-stable
-    make
-    cd
-    cd installer
+    curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+    echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+    apt-get -qq update
+    apt-get install -qq redis
 
     echo -e "$IGreen OK $Color_Off"
 
     # PHP Redis
     echo -e "\n$Cyan Installing PHP Redis ... $Color_Off"
     printf "\n" | pecl install redis
+
+    echo -e "$IGreen OK $Color_Off"
+
+    # Update Dependencies
+    apt-get -qq upgrade
 
     echo -e "$IGreen OK $Color_Off"
 }
