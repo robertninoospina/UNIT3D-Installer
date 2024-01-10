@@ -58,6 +58,7 @@ add_pkgs() {
     echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
     apt-get -qq update
     apt-get install -qq redis
+    systemctl enable redis-server
 
     echo -e "$IGreen OK $Color_Off"
 
