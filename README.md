@@ -30,7 +30,10 @@ config/secure-headers.php   <-- Content Security Policy must be disabled
 - Ubuntu 22.04 LTS (Jammy Jellyfish)
 - Ubuntu 20.04 LTS (Focal Fossa)
 
-**To install run the following:**
+**We offer install and tuning services for a small price if not comfortable installing and tuninng server yourself. Otherwise if want to install yurself run commannd below.**
+
+
+**To install run the following:** (and follow the instructions. must be a fresh deicated server with nothing on it besides Ubuntu 20.04 or 22.04. Also must have a proper valid domain pointing to your server IP via A RECORD and CNAME for www)
 ```
 git clone https://github.com/HDInnovations/UNIT3D-Installer.git installer
 cd installer
