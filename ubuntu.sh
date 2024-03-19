@@ -73,6 +73,12 @@ add_pkgs() {
     apt-get -qq upgrade
 
     echo -e "$IGreen OK $Color_Off"
+
+    # Bun
+    echo -e "\n$Cyan Installing Bun ... $Color_Off"
+    curl -fsSL https://bun.sh/install | bash
+
+    echo -e "$IGreen OK $Color_Off"
 }
 
 # Installs Composer
