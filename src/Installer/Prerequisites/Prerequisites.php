@@ -27,7 +27,7 @@ class Prerequisites extends BaseInstaller
         $pkgs = implode(' ', array_keys($software));
         $this->install($pkgs);
 
-        $this->process(['bun install -g laravel-echo-server']);
+        $this->process(['npm install -g laravel-echo-server']);
         $this->install('ufw');
         $this->process(['ufw allow 8443']);
 
