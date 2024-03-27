@@ -88,6 +88,8 @@ add_pkgs() {
 
     apt-get -qq install unzip > /dev/null
     curl -fsSL https://bun.sh/install | bash
+    #!/bin/bash
+    # Source the .bashrc file
     source /root/.bashrc
 
     echo -e "$IGreen OK $Color_Off"
