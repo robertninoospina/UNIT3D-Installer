@@ -54,6 +54,7 @@ add_pkgs() {
 
     # Redis
     echo -e "\n$Cyan Installing Redis ... $Color_Off"
+
     curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
     echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
     apt-get -qq update > /dev/null
@@ -62,20 +63,30 @@ add_pkgs() {
 
     echo -e "$IGreen OK $Color_Off"
 
+    # Symlink Redis and Enable
+    echo -e "\n$Cyan Symlinking and Enabling Redis ... $Color_Off"
+
+    systemctl enable redis-server
+
+    echo -e "$IGreen OK $Color_Off"
+
     # PHP Redis
     echo -e "\n$Cyan Installing PHP Redis ... $Color_Off"
-    printf "\n" | pecl install redis > /dev/null
+
+    printf "\n" | pecl install redis
 
     echo -e "$IGreen OK $Color_Off"
 
     # Update Dependencies
     echo -e "\n$Cyan Updating Dependencies ... $Color_Off"
+
     apt-get -qq upgrade > /dev/null
 
     echo -e "$IGreen OK $Color_Off"
 
     # Bun
     echo -e "\n$Cyan Installing Bun ... $Color_Off"
+
     apt-get -qq install unzip > /dev/null
     curl -fsSL https://bun.sh/install | bash
 
