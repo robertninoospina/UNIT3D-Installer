@@ -39,7 +39,7 @@ add_pkgs() {
     # Update apt
     echo -e "\n$Cyan Updating Packages ... $Color_Off"
 
-    apt-get -qq update
+    apt-get -qq update > /dev/null
     check $? "Updating packages Failed!"
 
     echo -e "$IGreen OK $Color_Off"
@@ -47,7 +47,7 @@ add_pkgs() {
     # PHP
     echo -e "\n$Cyan Installing PHP ... $Color_Off"
 
-    apt-get install -qq curl php-pear php8.3-common php8.3-cli php8.3-fpm php8.3-{redis,bcmath,curl,dev,gd,igbinary,intl,mbstring,mysql,opcache,readline,xml,zip}
+    apt-get -qq install curl php-pear php8.3-common php8.3-cli php8.3-fpm php8.3-{redis,bcmath,curl,dev,gd,igbinary,intl,mbstring,mysql,opcache,readline,xml,zip,unzip} > /dev/null
     check $? "Installing PHP Failed!"
 
     echo -e "$IGreen OK $Color_Off"
@@ -56,21 +56,21 @@ add_pkgs() {
     echo -e "\n$Cyan Installing Redis ... $Color_Off"
     curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
     echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
-    apt-get -qq update
-    apt-get install -qq redis
+    apt-get -qq update > /dev/null
+    apt-get -qq install redis > /dev/null
     systemctl enable redis-server
 
     echo -e "$IGreen OK $Color_Off"
 
     # PHP Redis
     echo -e "\n$Cyan Installing PHP Redis ... $Color_Off"
-    printf "\n" | pecl install redis
+    printf "\n" | pecl install redis > /dev/null
 
     echo -e "$IGreen OK $Color_Off"
 
     # Update Dependencies
     echo -e "\n$Cyan Updating Dependencies ... $Color_Off"
-    apt-get -qq upgrade
+    apt-get -qq upgrade > /dev/null
 
     echo -e "$IGreen OK $Color_Off"
 
@@ -95,7 +95,7 @@ install_composer() {
 installer_pkgs() {
     echo -e "\n$Cyan Adding Installer Packages ... $Color_Off"
 
-    composer install -q > /dev/null 2>&1
+    composer install -qq > /dev/null 2>&1
     check $? "Adding Installer Packages Failed!"
 
     echo -e "$IGreen OK $Color_Off"
