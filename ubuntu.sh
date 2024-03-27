@@ -59,12 +59,11 @@ add_pkgs() {
     echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
     apt-get -qq update > /dev/null
     apt-get -qq install redis > /dev/null
-    systemctl enable redis-server
 
     echo -e "$IGreen OK $Color_Off"
 
     # Symlink Redis and Enable
-    echo -e "\n$Cyan Symlinking and Enabling Redis ... $Color_Off"
+    echo -e "\n$Cyan Symlink and Enabling Redis ... $Color_Off"
 
     systemctl enable redis-server
 
@@ -73,7 +72,7 @@ add_pkgs() {
     # PHP Redis
     echo -e "\n$Cyan Installing PHP Redis ... $Color_Off"
 
-    printf "\n" | pecl install redis
+    printf "\n" | pecl install redis > /dev/null
 
     echo -e "$IGreen OK $Color_Off"
 
