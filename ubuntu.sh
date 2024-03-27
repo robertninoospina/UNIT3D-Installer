@@ -47,7 +47,7 @@ add_pkgs() {
     # PHP
     echo -e "\n$Cyan Installing PHP ... $Color_Off"
 
-    apt-get -qq install curl php-pear php8.3-common php8.3-cli php8.3-fpm php8.3-{redis,bcmath,curl,dev,gd,igbinary,intl,mbstring,mysql,opcache,readline,xml,zip,unzip} > /dev/null
+    apt-get -qq install curl php-pear php8.3-common php8.3-cli php8.3-fpm php8.3-{redis,bcmath,curl,dev,gd,igbinary,intl,mbstring,mysql,opcache,readline,xml,zip} > /dev/null
     check $? "Installing PHP Failed!"
 
     echo -e "$IGreen OK $Color_Off"
@@ -76,6 +76,7 @@ add_pkgs() {
 
     # Bun
     echo -e "\n$Cyan Installing Bun ... $Color_Off"
+    apt-get -qq install unzip > /dev/null
     curl -fsSL https://bun.sh/install | bash
 
     echo -e "$IGreen OK $Color_Off"
