@@ -89,7 +89,7 @@ add_pkgs() {
     apt-get -qq install unzip > /dev/null
     curl -fsSL https://bun.sh/install | bash
     # shellcheck disable=SC2002
-    eval "$(cat /root/.bashrc | tail -n +10)"
+    eval "$(cat /root/.bashrc | tail)"
 
     echo -e "$IGreen OK $Color_Off"
 }
