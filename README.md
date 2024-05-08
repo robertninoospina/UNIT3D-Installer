@@ -12,6 +12,7 @@ Installer for the [UNIT3D-Community-Edition](https://github.com/HDInnovations/UN
 **Officially Supported OS's**
 - Ubuntu 22.04 LTS (Jammy Jellyfish)
 - Ubuntu 20.04 LTS (Focal Fossa)
+
 **Unstable WIP**
 - Ubuntu 24.04 LTS (Noble Numbat)
 
