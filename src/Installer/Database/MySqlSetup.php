@@ -27,7 +27,7 @@ class MySqlSetup extends BaseInstaller
         $this->process(['cp -f ' . resource_path(distname() . "/mysql/$mycnf") . ' /etc/mysql/my.cnf']);
 
         if (distname() === 'ubuntu') {
-            if ((distmainver() === '20.04' || distmainver() === '22.04') && !is_dir('/var/lib/mysql')) {
+            if ((distmainver() === '20.04' || distmainver() === '22.04' || distmainver() === '24.04') && !is_dir('/var/lib/mysql')) {
                 $this->process([
                     'mkdir /var/lib/mysql',
                     'chown mysql:mysql /var/lib/mysql',
