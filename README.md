@@ -10,9 +10,11 @@
 Installer for the [UNIT3D-Community-Edition](https://github.com/HDInnovations/UNIT3D-Community-Edition).
 
 **Officially Supported OS's**
-- Ubuntu 24.04 LTS (Noble Numbat)
 - Ubuntu 22.04 LTS (Jammy Jellyfish)
 - Ubuntu 20.04 LTS (Focal Fossa)
+**Unstable WIP**
+- Ubuntu 24.04 LTS (Noble Numbat)
+
 
 **We offer install and tuning services for a small price if not comfortable installing and tuninng server yourself. Otherwise if want to install yurself run commannd below.**
 
