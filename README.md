@@ -27,6 +27,7 @@ config/secure-headers.php   <-- Content Security Policy must be disabled
 ```
 
 **Officially Supported OS's**
+- Ubuntu 24.04 LTS (Noble Numbat)
 - Ubuntu 22.04 LTS (Jammy Jellyfish)
 - Ubuntu 20.04 LTS (Focal Fossa)
 
