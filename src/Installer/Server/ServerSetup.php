@@ -129,10 +129,10 @@ class ServerSetup extends BaseInstaller
         $this->io->writeln('(Used for things like invites, registration, ect.)');
         $this->seperator();
 
-        $this->io->writeln('<fg=blue>/* You will need a provider like sendrid. */</>');
-        $this->io->writeln('<fg=cyan>https://sendgrid.com/pricing/</>');
+        $this->io->writeln('<fg=blue>/* You will need a provider like Resend. */</>');
+        $this->io->writeln('<fg=cyan>https://resend.com</>');
 
-        $this->io->writeln('Ref: <fg=cyan>https://laravel.com/docs/6.x/mail#introduction</>');
+        $this->io->writeln('Ref: <fg=cyan>https://laravel.com/docs/11.x/mail#introduction</>');
 
         $value = $this->io->choice('Mail Driver', [
             "smtp",
