@@ -132,6 +132,7 @@ class Unit3dSetup extends BaseInstaller
             'bun run build',
             'php artisan key:generate',
             'php artisan migrate --seed',
+            'php artisan auto:email-blacklist-update',
             'php artisan test:email'
         ];
 
