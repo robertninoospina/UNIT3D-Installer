@@ -5,7 +5,7 @@ use App\Installer\Database\MySqlSetup;
 return [
     'min_php_version' => '8.2',
 
-    'repository' => 'https://github.com/robertninoospina/UNIT3D-Community-Edition-8.3.1.git',
+    'repository' => 'https://github.com/robertninoospina/UNIT3D-Community-Edition-8.3.4.git',
 
     'database_installers' => [
         /**
